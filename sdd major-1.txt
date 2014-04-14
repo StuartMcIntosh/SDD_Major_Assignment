@@ -1,0 +1,25 @@
+import pygame, random
+
+
+#Game Setup
+pygame.init()
+ #Screen
+Width = 500
+Height = Width
+screen = pygame.display.set_mode((Height, Width))
+pygame.display.set_caption("Stuart McIntosh-SDD Major Assignment")
+
+ #Variables
+Game = "Run"
+
+
+
+
+ #Game Loop
+while Game == "Run":
+	for event in pygame.event.get():
+		if event.type == pygame.QUIT:
+			Game = "Stop"
+		if event.type == pygame.KEYDOWN:
+			if event.key == pygame.K_ESCAPE:
+				Game = "Stop"
