@@ -24,12 +24,12 @@ car.image = pygame.image.load('pretendcar.gif') #<-- 'pretendcar.gif' to be repl
 car.rect = car.image.get_rect()
 car_group = pygame.sprite.GroupSingle(car)
 #Tile setup
-tileSize = car.rect.width
-numTileWide = Width / tileSize
-numTileHigh = Height / tileSize
+TILE_SIZE = car.rect.width
+numTileWide = Width / TILE_SIZE
+numTileHigh = Height / TILE_SIZE
 
-screenX = numTileWide * tileSize
-screenY = numTileHigh * tileSize
+screenX = numTileWide * TILE_SIZE
+screenY = numTileHigh * TILE_SIZE
 screen = pygame.display.set_mode((screenX, screenY))
 pygame.display.set_caption("Stuart McIntosh-Yr 12 SDD Major Project")
 
@@ -50,65 +50,56 @@ d = 'down'
 l = 'left'
 movedir = s
 
-
-Questions Text File
-qtf = open('questions.txt')
-questions = array.array('c')
-qs = str(qtf)
-l = len(qs)
-questions.fromfile(qtf, 375)
-ql = list(qtf)
-
-
-
+###Questions Text File
+##qtf = open('questions.txt')
+##questions = array.array('c')
+##qs = str(qtf)
+##l = len(qs)
+##questions.fromfile(qtf, 375)
+##ql = list(qtf)
 
 #-Game Loop
 while Game == True:
-    for event in pygame.event.get():
-    #Quit Game
-        #Close Button
-        if event.type == pygame.QUIT:
-            Game = False
-        if event.type == pygame.KEYDOWN:
-            #Escape Key
-            if event.key == pygame.K_ESCAPE:
-                Game = False
-    #Arrow Key Movement
-            #Up Key
-            if event.key == pygame.K_UP:
-                movedir = u
-            #Right Key
-            if event.key == pygame.K_RIGHT:
-                movedir = r
-            #Down Key
-            if event.key == pygame.K_DOWN:
-                movedir = d
-            #Left Key
-            if event.key == pygame.K_LEFT:
-                movedir = l
-        else:
-            movedir = s
+        for event in pygame.event.get():
+        #Quit Game
+                #Close Button
+                if event.type == pygame.QUIT:
+                        Game = False
+                if event.type == pygame.KEYDOWN:
+                        #Escape Key
+                        if event.key == pygame.K_ESCAPE:
+                                Game = False
+        #Arrow Key Movement
+                        #Up Key
+                        if event.key == pygame.K_UP:
+                                movedir = u
+                        #Right Key
+                        if event.key == pygame.K_RIGHT:
+                                movedir = r
+                        #Down Key
+                        if event.key == pygame.K_DOWN:
+                                movedir = d
+                        #Left Key
+                        if event.key == pygame.K_LEFT:
+                                movedir = l
+                else:
+                        movedir = s
 
-    if movedir == u:
-        if car.rect.top > 0:
-            car.rect.top -= 1
-            time.sleep(0.005)
-    if movedir == r:
-         if car.rect.right < screenY:
-             car.rect.right += 1
-             time.sleep(0.005)
-    if movedir == d:
-        if car.rect.bottom < screenX:
-            car.rect.bottom += 1
-            time.sleep(0.005)
-    if movedir == l:
-          if car.rect.left > 0:
-             car.rect.left -= 1
-             time.sleep(0.005)
-
-    screen.fill(white)
-    car_group.draw(screen)
-    screen.blit(onScreenText, onScreenText_display)
-    pygame.display.update()
-pygame.quit()
-
+        if movedir == u:
+                if car.rect.top > 0:
+                        car.rect.top -= 1
+        if movedir == r:
+                 if car.rect.right < screenY:
+                         car.rect.right += 1
+        if movedir == d:
+                if car.rect.bottom < screenX:
+                        car.rect.bottom += 1
+        if movedir == l:
+                  if car.rect.left > 0:
+                         car.rect.left -= 1
+        screen.fill(white)
+        car_group.draw(screen)
+        screen.blit(onScreenText, onScreenText_display)
+        pygame.display.update()
+        
+pygame.quit()À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€
