@@ -1,56 +1,4 @@
-<<<<<<< HEAD
-Do you need to carry your license with you every time you drive?
-A-Only for long trips
-B-No, being licensed is enough
-C-All the time
-D-Only if you feel like it
-Question 02
-A-
-B-
-C-
-D-
-Question 03
-A-
-B-
-C-
-D-
-Question 04
-A-
-B-
-C-
-D-
-Question 05
-A-
-B-
-C-
-D-
-Question 06
-A-
-B-
-C-
-D-
-Question 07
-A-
-B-
-C-
-D-
-Question 08
-A-
-B-
-C-
-D-
-Question 09
-A-
-B-
-C-
-D-
-Question 10
-A-
-B-
-C-
-D-
-=======
-Do you need yor license with you when you everytime you drive?
+Do you need your license with you when you every time you drive?
 A-No, being licensed is enough
 B-Only for long trips
 C-Yes, all the time
@@ -99,4 +47,3 @@ Question 10
 A
 B
 C
->>>>>>> b27cb2c309cd06d0ab284b640316ab3ed7ac457a

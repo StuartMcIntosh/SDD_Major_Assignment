@@ -71,20 +71,19 @@ while Game == True:
                                 Game = False
         #Arrow Key Movement
                         #Up Key
-                        if event.key == pygame.K_UP:
-                                movedir = u
-                        #Right Key
-                        if event.key == pygame.K_RIGHT:
-                                movedir = r
-                        #Down Key
-                        if event.key == pygame.K_DOWN:
-                                movedir = d
-                        #Left Key
-                        if event.key == pygame.K_LEFT:
-                                movedir = l
-                else:
-                        movedir = s
-
+##                        if :
+##                                movedir = u
+##                        #Right Key
+##                        if :
+##                                movedir = r
+##                        #Down Key
+##                        if :
+##                                movedir = d
+##                        #Left Key
+##                        if :
+##                                movedir = l
+##                else:
+##                        movedir = s
         if movedir == u:
                 if car.rect.top > 0:
                         car.rect.top -= 1
@@ -97,6 +96,7 @@ while Game == True:
         if movedir == l:
                   if car.rect.left > 0:
                          car.rect.left -= 1
+
         screen.fill(white)
         car_group.draw(screen)
         screen.blit(onScreenText, onScreenText_display)
