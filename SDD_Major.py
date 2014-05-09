@@ -58,7 +58,12 @@ def StartScreen():
         font = pygame.font.Font(None, 40)
         DisplayOne = font.render(TextOne, True, black)
         DisplayOne_View = DisplayOne.get_rect(centerx=screenX/2, centery=screenY/2)
+        DisplayTwo = font.render(TextTwo, True, black)
+        DisplayTwo_View = DisplayTwo.get_rect(centerx=screenX/3, centery=screenY/3)
+        screen.fill(white)
+        car_group.draw(screen)
         screen.blit(DisplayOne, DisplayOne_View)
+        screen.blit(DisplayTwo, DisplayTwo_View)
 
 
 #-Game Loop
@@ -100,11 +105,6 @@ while Game == True:
                   if car.rect.left > 0:
                          car.rect.left -= 1
                          
-        
-        screen.fill(white)
-        car_group.draw(screen)
         StartScreen()
         pygame.display.update()
-        
-pygame.quit()
-À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€
+pygame.quit()À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€
