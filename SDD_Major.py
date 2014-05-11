@@ -24,13 +24,14 @@ TILE_SIZE = car.rect.width
 numTileWide = Width / TILE_SIZE
 numTileHigh = Height / TILE_SIZE
 screen = pygame.display.set_mode((Height, Width))
+screen.fill(white)
 
-##
+#Welcome screen text
 TextOne = 'Welcome To'
 TextTwo = 'Learn Your Road Rules'
 TextThree = '-A Game Of Learning-'
 Continue = 'Press Space Key to Advance'
-
+#Loading text to display
 font = pygame.font.Font(None, 40)
 DisplayOne = font.render(TextOne, True, black)
 DisplayOne_View = DisplayOne.get_rect(centerx=Width/2, centery=80)
@@ -40,29 +41,47 @@ DisplayThree = font.render(TextThree, True, black)
 DisplayThree_View = DisplayThree.get_rect(centerx=Width/2, centery=160)
 DisplayContinue = font.render(Continue, True, black)
 DisplayContinue_View = DisplayContinue.get_rect(centerx=Width/2, centery=400)
+
 pygame.display.set_caption("Yr 12 SDD Major Project-Stuart McIntosh")
-screen.fill(white)
+
 
 ###Questions Text File
 ##qtf = open('questions.txt', 'r')
 
+#Test Question/Answer
+#-These are to demonstrate how the program will function
+#--The final result would be to have the questions loaded from a external text file
+#--However, I had trouble loading lines of the text file into an array
 TestQuestion = 'Is it necessary to carry your license every time you drive?'
 TestAnswerA = 'A-No, Being licensed is enough'
 TestAnswerB ='B-Yes all the time'
 TestAnswerC = 'C-No, Only for long trips'
-CorrectAnswer = 'B-Yes all the time'
 UserAnswer = ''
+UserPrompt = 'Press the A, B or C key relating to your answer'
 
+#Again, we see how Pygame requires a lot to load text to the screen
 font = pygame.font.Font(None, 25)
+#-This is the question
 DisplayQuestion = font.render(TestQuestion, True, black)
-DisplayQuestion_View = DisplayQuestion.get_rect(centerx=Width/2, centery=80)
+DisplayQuestion_View = DisplayQuestion.get_rect(centerx=Width/2, centery=50)
+#-These are the answer options
 DisplayA = font.render(TestAnswerA, True, black)
-DisplayA_View = DisplayA.get_rect(centerx=Width/2, centery=240)
+DisplayA_View = DisplayA.get_rect(centerx=Width/2, centery=150)
 DisplayB = font.render(TestAnswerB, True, black)
-DisplayB_View = DisplayB.get_rect(centerx=Width/2, centery=320)
+DisplayB_View = DisplayB.get_rect(centerx=Width/2, centery=200)
 DisplayC = font.render(TestAnswerC, True, black)
-DisplayC_View = DisplayC.get_rect(centerx=Width/2, centery=400)
+DisplayC_View = DisplayC.get_rect(centerx=Width/2, centery=250)
+#-This is the prompt for users to enter there answer choice
+font = pygame.font.Font(None, 20)
+UserInput = font.render(UserPrompt, True, black)
+UserInput_View = UserInput.get_rect(centerx=Width/2, centery=400)
 
+#Win/Lose Screens
+font = pygame.font.Font(None, 30)
+Win = font.render('Congratulations, You Win!', True, black)
+DisplayWin = Win.get_rect(centerx=Width/2, centery=Height/2)
+Lose = font.render('Sorry, You Lose', True, black)
+DisplayLose = Lose.get_rect(centerx=Width/2, centery=Height/2)
 
 #-Game Loop
 while Display == True:
@@ -90,12 +109,29 @@ while Display == True:
 
     if Game == True:
         screen.fill(white)
+        #Test Question Display
         screen.blit(DisplayQuestion, DisplayQuestion_View)
         screen.blit(DisplayA, DisplayA_View)
         screen.blit(DisplayB, DisplayB_View)
         screen.blit(DisplayC, DisplayC_View)
-
+        screen.blit(UserInput, UserInput_View)
+        #User Answer Input
+        if event.type == pygame.KEYDOWN:
+            if event.key == pygame.K_a:
+                UserAnswer = 'TestAnswerA'
+            if event.key == pygame.K_b:
+                UserAnswer = 'TestAnswerB'
+            if event.key == pygame.K_c:
+                UserAnswer = 'TestAnswerC'
+        #Updates Game Screen Based on User Answer
+        #-If User Answers correctly, Win screen is displayed
+        if UserAnswer == 'TestAnswerB':
+            screen.fill(white)
+            screen.blit(Win, DisplayWin)
+        #-If User Answers incorrectly, Lose screen is displayed
+        elif UserAnswer == 'TestAnswerA' or UserAnswer == 'TestAnswerC':
+            screen.fill(white)
+            screen.blit(Lose, DisplayLose)
 
     pygame.display.update()
-
 pygame.quit()
