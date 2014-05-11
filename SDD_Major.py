@@ -1,36 +1,42 @@
 ## Stuart McIntosh
 ## Year 12 Software Design and Development Software Major Project
-## Due Date: 09/05/2014
+## Due Date: 12/05/2014
 
 import pygame
 pygame.init()
 
 #Variables
-# to run the game loop
+#-To run the game loop
 Display = True
 Game = False
-#Screen
+#-Screen
 Height = 500
 Width = 500
-#Colours used in the program, in (R, G, B) format
+#-Colours used in the program, in (R, G, B) format
 black = (0, 0, 0)
 white = (255, 255, 255)
 
-car = pygame.sprite.Sprite()
-car.image = pygame.image.load('car.png')
-car.rect = car.image.get_rect()
-car_group = pygame.sprite.GroupSingle(car)
-TILE_SIZE = car.rect.width
-numTileWide = Width / TILE_SIZE
-numTileHigh = Height / TILE_SIZE
 screen = pygame.display.set_mode((Height, Width))
 screen.fill(white)
+pygame.display.set_caption("Yr 12 SDD Major Project-Stuart McIntosh")
+
+
+#Loads Car graphic for Display
+##car = pygame.sprite.Sprite()
+##car.image = pygame.image.load('car.png')
+##car.rect = car.image.get_rect()
+##car_group = pygame.sprite.GroupSingle(car)
+##TILE_SIZE = car.rect.width
+##numTileWide = Width / TILE_SIZE
+##numTileHigh = Height / TILE_SIZE
+
 
 #Welcome screen text
 TextOne = 'Welcome To'
 TextTwo = 'Learn Your Road Rules'
-TextThree = '-A Game Of Learning-'
+TextThree = '-A Game Of Knowledge-'
 Continue = 'Press Space Key to Advance'
+
 #Loading text to display
 font = pygame.font.Font(None, 40)
 DisplayOne = font.render(TextOne, True, black)
@@ -42,11 +48,10 @@ DisplayThree_View = DisplayThree.get_rect(centerx=Width/2, centery=160)
 DisplayContinue = font.render(Continue, True, black)
 DisplayContinue_View = DisplayContinue.get_rect(centerx=Width/2, centery=400)
 
-pygame.display.set_caption("Yr 12 SDD Major Project-Stuart McIntosh")
-
 
 ###Questions Text File
 ##qtf = open('questions.txt', 'r')
+
 
 #Test Question/Answer
 #-These are to demonstrate how the program will function
@@ -58,6 +63,7 @@ TestAnswerB ='B-Yes all the time'
 TestAnswerC = 'C-No, Only for long trips'
 UserAnswer = ''
 UserPrompt = 'Press the A, B or C key relating to your answer'
+
 
 #Again, we see how Pygame requires a lot to load text to the screen
 font = pygame.font.Font(None, 25)
@@ -76,12 +82,14 @@ font = pygame.font.Font(None, 20)
 UserInput = font.render(UserPrompt, True, black)
 UserInput_View = UserInput.get_rect(centerx=Width/2, centery=400)
 
+
 #Win/Lose Screens
 font = pygame.font.Font(None, 30)
 Win = font.render('Congratulations, You Win!', True, black)
 DisplayWin = Win.get_rect(centerx=Width/2, centery=Height/2)
 Lose = font.render('Sorry, You Lose', True, black)
 DisplayLose = Lose.get_rect(centerx=Width/2, centery=Height/2)
+
 
 #-Game Loop
 while Display == True:
