@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-Do you need your license with you when you everytime you drive?
-=======
 Do you need your license with you when you every time you drive?
->>>>>>> 59cdc680354bd9ad3e49c2f377ed185025634314
 A-No, being licensed is enough
 B-Only for long trips
 C-Yes, all the time
