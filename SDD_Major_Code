@@ -20,10 +20,6 @@ screen = pygame.display.set_mode((Height, Width))
 screen.fill(white)
 pygame.display.set_caption("Yr 12 SDD Major Project-Stuart McIntosh")
 
-<<<<<<< HEAD
-=======
-
->>>>>>> FETCH_HEAD
 #Loads Car graphic for Display
 ##car = pygame.sprite.Sprite()
 ##car.image = pygame.image.load('car.png')
@@ -40,29 +36,6 @@ TextTwo = 'Learn Your Road Rules'
 TextThree = '-A Game Of Knowledge-'
 Continue = 'Press Space Key to Advance'
 
-<<<<<<< HEAD
-###Questions Text File
-questionsfile = open('questions.txt', 'r')
-questions = questionsfile.read()
-##questionsfile.close
-
-#Loading text to display
-font = pygame.font.Font(None, 40)
-##DisplayOne = font.render(TextOne, True, black)
-##DisplayOne_View = DisplayOne.get_rect(centerx=Width/2, centery=80)
-##DisplayTwo = font.render(TextTwo, True, black)
-##DisplayTwo_View = DisplayTwo.get_rect(centerx=Width/2, centery=240)
-##DisplayThree = font.render(TextThree, True, black)
-##DisplayThree_View = DisplayThree.get_rect(centerx=Width/2, centery=160)
-##DisplayContinue = font.render(Continue, True, black)
-##DisplayContinue_View = DisplayContinue.get_rect(centerx=Width/2, centery=400)
-
-
-###Questions Text File
-questionsfile = open('questions.txt', 'r')
-questions = questionsfile.read()
-questionsfile.close
-=======
 #Loading text to display
 font = pygame.font.Font(None, 40)
 DisplayOne = font.render(TextOne, True, black)
@@ -76,9 +49,9 @@ DisplayContinue_View = DisplayContinue.get_rect(centerx=Width/2, centery=400)
 
 
 ###Questions Text File
-##qtf = open('questions.txt', 'r')
-
->>>>>>> FETCH_HEAD
+questionsfile = open('questions.txt', 'r')
+questions = questionsfile.read()
+questionsfile.close
 
 #Test Question/Answer
 #-These are to demonstrate how the program will function
@@ -117,10 +90,6 @@ DisplayWin = Win.get_rect(centerx=Width/2, centery=Height/2)
 Lose = font.render('Sorry, You Lose', True, black)
 DisplayLose = Lose.get_rect(centerx=Width/2, centery=Height/2)
 
-<<<<<<< HEAD
-=======
-
->>>>>>> FETCH_HEAD
 #-Game Loop
 while Display == True:
     for event in pygame.event.get():
@@ -134,11 +103,7 @@ while Display == True:
                 Display = False
         
     screen.fill(white)
-<<<<<<< HEAD
 ##    car_group.draw(screen)
-=======
-    car_group.draw(screen)
->>>>>>> FETCH_HEAD
     screen.blit(DisplayOne, DisplayOne_View)
     screen.blit(DisplayTwo, DisplayTwo_View)
     screen.blit(DisplayThree, DisplayThree_View)
@@ -174,10 +139,6 @@ while Display == True:
         elif UserAnswer == 'TestAnswerA' or UserAnswer == 'TestAnswerC':
             screen.fill(white)
             screen.blit(Lose, DisplayLose)
-<<<<<<< HEAD
             
-=======
-
->>>>>>> FETCH_HEAD
     pygame.display.update()
 pygame.quit()
