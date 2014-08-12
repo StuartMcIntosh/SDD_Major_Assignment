@@ -36,16 +36,21 @@ TextTwo = 'Learn Your Road Rules'
 TextThree = '-A Game Of Knowledge-'
 Continue = 'Press Space Key to Advance'
 
+###Questions Text File
+questionsfile = open('questions.txt', 'r')
+questions = questionsfile.read()
+##questionsfile.close
+
 #Loading text to display
 font = pygame.font.Font(None, 40)
-DisplayOne = font.render(TextOne, True, black)
-DisplayOne_View = DisplayOne.get_rect(centerx=Width/2, centery=80)
-DisplayTwo = font.render(TextTwo, True, black)
-DisplayTwo_View = DisplayTwo.get_rect(centerx=Width/2, centery=240)
-DisplayThree = font.render(TextThree, True, black)
-DisplayThree_View = DisplayThree.get_rect(centerx=Width/2, centery=160)
-DisplayContinue = font.render(Continue, True, black)
-DisplayContinue_View = DisplayContinue.get_rect(centerx=Width/2, centery=400)
+##DisplayOne = font.render(TextOne, True, black)
+##DisplayOne_View = DisplayOne.get_rect(centerx=Width/2, centery=80)
+##DisplayTwo = font.render(TextTwo, True, black)
+##DisplayTwo_View = DisplayTwo.get_rect(centerx=Width/2, centery=240)
+##DisplayThree = font.render(TextThree, True, black)
+##DisplayThree_View = DisplayThree.get_rect(centerx=Width/2, centery=160)
+##DisplayContinue = font.render(Continue, True, black)
+##DisplayContinue_View = DisplayContinue.get_rect(centerx=Width/2, centery=400)
 
 
 ###Questions Text File
